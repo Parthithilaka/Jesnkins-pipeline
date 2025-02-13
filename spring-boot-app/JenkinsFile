@@ -11,7 +11,7 @@ agent any
         }
         stage ('build') {
             steps {
-                sh 'cd spring-boot-appmvn && mvn clean package '
+                sh 'cd spring-boot-app && mvn clean package '
             }
         }
     }
