@@ -11,19 +11,7 @@ agent any
         }
         stage ('build') {
             steps {
-                sh 'mvn clean package '
-            }
-        }
-        stage ('docker') {
-            steps {
-                script {
-                    docker.withRegistry('https://index.docker.io/v1/', 'docker-cred') {
-                        echo "Pulling the image from private Docker Hub repo"
-                        def image = docker.image("${params.version}")
-                        image.pull()
-                        echo "Image pulled successfully"
-                    }
-                }   
+                sh 'cd spring-boot-appmvn && mvn clean package '
             }
         }
     }
