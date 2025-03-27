@@ -39,5 +39,5 @@ jobs:
         docker images
         docker build -t parthitk/task:latest .
         docker tag parthitk/task:latest parthitk/task:latest
-        docker login -u $ {{ secrets.DOCKERHUB_USERNAME }} -p
+        docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
         docker push parthitk/task:latest
