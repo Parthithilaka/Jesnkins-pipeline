@@ -33,8 +33,8 @@ jobs:
     - name: List Docker Images
       run: docker images
 
-    - name: Test Docker Hub Login
-      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+    - name: Logout any previous session
+      run: docker logout
 
     
 
