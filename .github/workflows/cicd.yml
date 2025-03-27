@@ -48,15 +48,11 @@ jobs:
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
-    - name: move folder
-      run: |
-       ls -la 
-       cd spring-boot-app/
 
     - name: Build and push
       uses: docker/build-push-action@v6
       with:
-        context: .
+        context: ./spring-boot-app
         file: ./Dockerfile
         platforms: linux/amd64,linux/arm64
         push: true
